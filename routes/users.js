@@ -7,6 +7,8 @@ const User = require('../models/User');
 router.post('/', async (req, res) => {
     try {
         console.log('Request body:', req.body); // Log the incoming data
+        console.log("data", req.params);
+
         const user = new User(req.body);
         await user.save();
         console.log('User saved:', user); // Log the saved user
